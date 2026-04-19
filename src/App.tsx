@@ -26,7 +26,9 @@ import {
   Settings,
   Lightbulb,
   X,
-  ArrowDown
+  ArrowDown,
+  Download,
+  User
 } from "lucide-react";
 
 const fadeIn = {
@@ -44,15 +46,30 @@ export default function App() {
       {/* SIDEBAR */}
       <aside className="w-full lg:w-80 h-full bg-sidebar-bg border-r border-border-subtle p-8 overflow-y-auto flex flex-col gap-8 shrink-0">
         <div>
-          <header className="border-b-2 border-accent pb-3 mb-6">
-            <h1 className="text-2xl font-bold text-primary tracking-tight">Aung Zaw Moe</h1>
-            <div className="text-[13px] uppercase tracking-wider font-extrabold text-accent mt-1">IT Manager</div>
-          </header>
+          <div className="flex flex-col items-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-slate-50 border border-border-subtle flex items-center justify-center shadow-inner mb-4 overflow-hidden group">
+              <User className="w-10 h-10 text-slate-300 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
+            </div>
+            <header className="border-b-2 border-accent pb-3 w-full text-center">
+              <h1 className="text-2xl font-bold text-primary tracking-tight">Aung Zaw Moe</h1>
+              <div className="text-[13px] uppercase tracking-wider font-extrabold text-accent mt-1">IT Manager</div>
+            </header>
+          </div>
 
-          <div className="space-y-2">
-            <ContactItem icon={<Mail className="w-3.5 h-3.5" />} text="komoe@mindset-it.online" link="mailto:komoe@mindset-it.online" />
-            <ContactItem icon={<Phone className="w-3.5 h-3.5" />} text="09-454235411" />
-            <ContactItem icon={<MapPin className="w-3.5 h-3.5" />} text="Yangon, Myanmar" />
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <ContactItem icon={<Mail className="w-3.5 h-3.5" aria-hidden="true" />} text="komoe@mindset-it.online" link="mailto:komoe@mindset-it.online" />
+              <ContactItem icon={<Phone className="w-3.5 h-3.5" aria-hidden="true" />} text="09-454235411" />
+              <ContactItem icon={<MapPin className="w-3.5 h-3.5" aria-hidden="true" />} text="Yangon, Myanmar" />
+            </div>
+
+            <button 
+              className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg text-[11px] font-bold uppercase tracking-[0.15em] shadow-lg shadow-primary/10 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98] group"
+              onClick={() => window.print()}
+            >
+              <Download className="w-4 h-4 group-hover:animate-bounce" aria-hidden="true" />
+              Download Resume
+            </button>
           </div>
         </div>
 
@@ -64,10 +81,10 @@ export default function App() {
               className="w-full flex items-center justify-between gap-3 bg-accent text-white p-4 rounded-xl font-bold shadow-lg hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               <div className="flex items-center gap-3">
-                <Lightbulb className="w-5 h-5" />
+                <Lightbulb className="w-5 h-5" aria-hidden="true" />
                 <span className="text-sm">AI Mindset Ideas</span>
               </div>
-              <Zap className="w-4 h-4 text-white/70" />
+              <Zap className="w-4 h-4 text-white/70" aria-hidden="true" />
             </button>
           </section>
 
@@ -159,7 +176,7 @@ export default function App() {
 function ContactItem({ icon, text, link }: { icon: React.ReactNode, text: string, link?: string }) {
   const content = (
     <div className="flex items-center gap-2 text-[13px] text-text-light hover:text-accent transition-colors group cursor-default">
-      <span className="group-hover:scale-110 transition-transform">{icon}</span>
+      <span className="group-hover:scale-110 transition-transform" aria-hidden="true">{icon}</span>
       <span>{text}</span>
     </div>
   );
@@ -169,7 +186,7 @@ function ContactItem({ icon, text, link }: { icon: React.ReactNode, text: string
 function CertItem({ text }: { text: string }) {
   return (
     <li className="flex items-center gap-2 text-[12px] text-text-main font-medium">
-      <CheckCircle2 className="w-3.5 h-3.5 text-success" />
+      <CheckCircle2 className="w-3.5 h-3.5 text-success" aria-hidden="true" />
       {text}
     </li>
   );
@@ -203,6 +220,9 @@ function AiMindsetModal({ onClose }: { onClose: () => void }) {
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm shadow-2xl overflow-y-auto"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
     >
       <motion.div 
         initial={{ scale: 0.9, y: 20 }}
@@ -214,14 +234,15 @@ function AiMindsetModal({ onClose }: { onClose: () => void }) {
         <button 
           onClick={onClose}
           className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-primary transition-colors z-10"
+          aria-label="Close modal"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5" aria-hidden="true" />
         </button>
 
         <div className="p-8 md:p-12 overflow-y-auto max-h-[85vh]">
           {/* Section A: Executive Summary */}
           <div className="mb-16">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-primary mb-6 text-center tracking-tight font-display">
+            <h1 id="modal-title" className="text-3xl md:text-4xl font-extrabold text-primary mb-6 text-center tracking-tight font-display">
               5 Strategies to Supercharge Your Intelligence with AI
             </h1>
             
@@ -281,7 +302,7 @@ function StrategyMiniCard({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl border border-border-subtle hover:border-accent/40 transition-colors">
       <div className="bg-accent text-white rounded-lg p-2 shrink-0">
-        <Zap className="w-4 h-4" />
+        <Zap className="w-4 h-4" aria-hidden="true" />
       </div>
       <div>
         <h3 className="font-bold text-primary text-sm tracking-tight">{title}</h3>
@@ -302,13 +323,31 @@ function MindmapNode({ phase, title, desc, active }: { phase: string, title: str
 }
 
 function ArrowIcon() {
-  return <div className="p-2 text-slate-300"><ArrowDown className="w-5 h-5" strokeWidth={3} /></div>;
+  return <div className="p-2 text-slate-300"><ArrowDown className="w-5 h-5" strokeWidth={3} aria-hidden="true" /></div>;
 }
 
 function FlipCard({ front, back }: { front: string, back: string }) {
+  const [flipped, setFlipped] = React.useState(false);
+
+  const handleToggle = () => setFlipped(!flipped);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
+
   return (
-    <div className="flip-card h-[200px]" tabIndex={0}>
-      <div className="flip-card-inner h-full w-full">
+    <div 
+      className="flip-card h-[200px]" 
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      onClick={handleToggle}
+      role="button"
+      aria-label={`Insight card: ${front}. Press to see details.`}
+    >
+      <div className={`flip-card-inner h-full w-full ${flipped ? '[transform:rotateY(180deg)]' : ''}`}>
         <div className="flip-card-front font-display h-full w-full">{front}</div>
         <div className="flip-card-back h-full w-full">{back}</div>
       </div>
