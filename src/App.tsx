@@ -49,7 +49,7 @@ export default function App() {
           <div className="flex flex-col items-center mb-6">
             <div className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 overflow-hidden group bg-slate-50 relative">
               <img 
-                src="/komoe.png" 
+                src="/komoe.svg" 
                 alt="Aung Zaw Moe Professional Profile" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onError={(e) => {
