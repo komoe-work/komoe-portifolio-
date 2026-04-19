@@ -70,6 +70,7 @@ export default function App() {
 
           <div className="space-y-6">
             <div className="space-y-2">
+              <ContactItem icon={<Globe className="w-3.5 h-3.5" aria-hidden="true" />} text="ai.mindset-it.online" link="https://ai.mindset-it.online/" />
               <ContactItem icon={<Mail className="w-3.5 h-3.5" aria-hidden="true" />} text="komoe@mindset-it.online" link="mailto:komoe@mindset-it.online" />
               <ContactItem icon={<Phone className="w-3.5 h-3.5" aria-hidden="true" />} text="09-454235411" />
               <ContactItem icon={<MapPin className="w-3.5 h-3.5" aria-hidden="true" />} text="Yangon, Myanmar" />
