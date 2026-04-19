@@ -30,6 +30,41 @@
   perspective: 1000px;
 }
 
+/* Myanmar Font Support & Article Styles */
+@font-face {
+  font-family: 'Pyidaungsu';
+  src: url('https://raw.githubusercontent.com/ktt-myanmar/pyidaungsu-webfont/master/fonts/Pyidaungsu-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pyidaungsu';
+  src: url('https://raw.githubusercontent.com/ktt-myanmar/pyidaungsu-webfont/master/fonts/Pyidaungsu-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-myanmar {
+  font-family: 'Pyidaungsu', 'Myanmar Text', 'Segoe UI', serif;
+}
+
+.article-content h2 {
+  @apply text-xl font-bold text-slate-800 mt-8 mb-4 border-l-4 border-accent pl-4;
+}
+
+.article-content p {
+  @apply mb-4 leading-relaxed text-[15px] lg:text-[16px] text-justify;
+}
+
+.article-content .highlight-box {
+  @apply bg-accent/5 border-l-4 border-accent p-6 rounded-r-xl my-8 italic text-slate-700 font-medium;
+}
+
+.article-content .step-label {
+  @apply font-bold text-primary block lg:inline;
+}
+
 .flip-card-inner {
   position: relative;
   width: 100%;

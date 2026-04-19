@@ -28,7 +28,8 @@ import {
   X,
   ArrowDown,
   Download,
-  User
+  User,
+  BarChart3
 } from "lucide-react";
 
 const fadeIn = {
@@ -40,11 +41,12 @@ const fadeIn = {
 
 export default function App() {
   const [showAiMindset, setShowAiMindset] = React.useState(false);
+  const [showMarketingMindset, setShowMarketingMindset] = React.useState(false);
 
   return (
     <div className="min-h-screen lg:h-screen flex flex-col lg:flex-row bg-page-bg font-sans overflow-hidden">
       {/* SIDEBAR */}
-      <aside className="w-full lg:w-80 h-full bg-sidebar-bg border-r border-border-subtle p-8 overflow-y-auto flex flex-col gap-8 shrink-0">
+      <aside className="w-full lg:w-80 h-full bg-sidebar-bg border-r border-border-subtle p-8 overflow-y-auto flex flex-col gap-8 shrink-0 focus-visible:outline-none">
         <div>
           <div className="flex flex-col items-center mb-6">
             <div className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 overflow-hidden group bg-slate-50 relative">
@@ -85,7 +87,7 @@ export default function App() {
         </div>
 
         {/* Sidebar Sections */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           <section>
             <button 
               onClick={() => setShowAiMindset(true)}
@@ -93,12 +95,27 @@ export default function App() {
             >
               <div className="flex items-center gap-3">
                 <Lightbulb className="w-5 h-5" aria-hidden="true" />
-                <span className="text-sm">AI Mindset Ideas</span>
+                <span className="text-xs uppercase tracking-wider">AI Mindset Ideas</span>
               </div>
               <Zap className="w-4 h-4 text-white/70" aria-hidden="true" />
             </button>
           </section>
 
+          <section>
+            <button 
+              onClick={() => setShowMarketingMindset(true)}
+              className="w-full flex items-center justify-between gap-3 bg-primary text-white p-4 rounded-xl font-bold shadow-lg hover:bg-slate-800 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <div className="flex items-center gap-3">
+                <BarChart3 className="w-5 h-5" aria-hidden="true" />
+                <span className="text-xs uppercase tracking-wider">Marketing Strategy</span>
+              </div>
+              <Globe className="w-4 h-4 text-white/70" aria-hidden="true" />
+            </button>
+          </section>
+        </div>
+
+        <div className="space-y-8">
           <section>
             <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light mb-3 block">Executive Profile</span>
             <p className="text-[12.5px] text-text-main leading-relaxed">
@@ -109,7 +126,7 @@ export default function App() {
           <section>
             <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light mb-3 block">Tech Stack</span>
             <div className="flex flex-wrap gap-1.5">
-              {["AWS Cloud", "Docker", "Cisco ASA", "MikroTik", "Odoo ERP", "Ollama AI", "MS EDR", "Synology", "Python", "Nessus"].map((skill, i) => (
+              {["AWS Cloud", "Docker", "Google Cloud Platform (GCP)", "Cloudflare IaaS", "Proxmox Virtual Environment (PVE)", "Ollama AI", "MS EDR", "NAS Solution", "Nessus", "Software as a Service (SaaS)"].map((skill, i) => (
                 <span key={skill} className={`px-2.5 py-1 border border-border-subtle rounded text-[10.5px] font-semibold ${i < 2 ? 'bg-primary text-white border-transparent' : 'bg-slate-50 text-primary'}`}>
                   {skill}
                 </span>
@@ -178,6 +195,9 @@ export default function App() {
       <AnimatePresence>
         {showAiMindset && (
           <AiMindsetModal onClose={() => setShowAiMindset(false)} />
+        )}
+        {showMarketingMindset && (
+          <MarketingMindsetModal onClose={() => setShowMarketingMindset(false)} />
         )}
       </AnimatePresence>
     </div>
@@ -363,6 +383,198 @@ function FlipCard({ front, back }: { front: string, back: string }) {
         <div className="flip-card-back h-full w-full">{back}</div>
       </div>
     </div>
+  );
+}
+
+function MarketingMindsetModal({ onClose }: { onClose: () => void }) {
+  const [activeTab, setActiveTab] = React.useState<'summary' | 'insights'>('summary');
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm shadow-2xl overflow-y-auto"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="marketing-modal-title"
+    >
+      <motion.div 
+        initial={{ scale: 0.9, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="bg-white rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden relative flex flex-col max-h-[90vh]"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="bg-slate-50 border-b border-border-subtle p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col">
+            <h1 id="marketing-modal-title" className="text-xl lg:text-2xl font-bold text-primary tracking-tight font-display">
+              Marketing 7.0: Philip Kotler Insights
+            </h1>
+            <p className="text-[11px] uppercase tracking-widest text-accent font-bold mt-1">Strategic Mindset Evolution</p>
+          </div>
+          
+          <div className="flex bg-slate-200 p-1 rounded-lg">
+            <button 
+              onClick={() => setActiveTab('summary')}
+              className={`px-4 py-1.5 rounded-md text-[11px] font-bold transition-all ${activeTab === 'summary' ? 'bg-white text-primary shadow-sm' : 'text-text-light hover:text-primary'}`}
+            >
+              Summary
+            </button>
+            <button 
+              onClick={() => setActiveTab('insights')}
+              className={`px-4 py-1.5 rounded-md text-[11px] font-bold transition-all ${activeTab === 'insights' ? 'bg-white text-primary shadow-sm' : 'text-text-light hover:text-primary'}`}
+            >
+              10 Deep Insights
+            </button>
+          </div>
+
+          <button 
+            onClick={onClose}
+            className="p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-primary transition-colors shrink-0"
+            aria-label="Close modal"
+          >
+            <X className="w-5 h-5" aria-hidden="true" />
+          </button>
+        </div>
+
+        <div className="p-8 md:p-12 overflow-y-auto article-content font-myanmar">
+          {activeTab === 'summary' ? <Marketing7Summary /> : <Marketing7Insights10 />}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function Marketing7Summary() {
+  return (
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-center border-none pl-0 mb-12 text-2xl lg:text-3xl text-primary">Marketing 7.0 ၏ အဓိက အနှစ်ချုပ်များ</h2>
+
+      <section>
+        <span className="text-accent font-bold text-sm block mb-2">စိတ်ပိုင်းဆိုင်ရာကို ဗဟိုပြုခြင်း</span>
+        <p>
+          AI အသုံးပြုပြီး Data တွေ၊ Performance တွေကိုချည်းပဲ အားရုံစိုက်နေမယ့်အစား လူတွေဘယ်လိုတွေးခေါ်သလဲ၊ အမှတ်တံဆိပ်တွေနဲ့ ဘယ်လိုချိတ်ဆက်သလဲ၊ ဘယ်လိုဆုံးဖြတ်ဝယ်ယူသလဲ ဆိုတဲ့ "လူ့စိတ်သဘာဝ (Human Mind)" ကို ပိုမိုနားလည်အောင် ချဉ်းကပ်တဲ့ မားကတ်တင်းဖြစ်ပါတယ်။
+        </p>
+      </section>
+
+      <section className="mt-8">
+        <span className="text-accent font-bold text-sm block mb-2">နည်းပညာပေါင်းစပ်ထားသော စားသုံးသူများ</span>
+        <p>
+          ဒီခေတ်က စားသုံးသူတွေဟာ နေ့စဉ်ဘဝမှာ AI နဲ့ Immersive နည်းပညာတွေကို အသုံးပြုပြီး ဆုံးဖြတ်ချက်ချနေကြပါပြီ။ ဒါကြောင့် ဒီလို နည်းပညာအကူအညီတွေ ရယူထားတဲ့ စားသုံးသူအသစ်တွေ (Augmented Humans) နဲ့ ဘယ်လိုထိရောက်စွာ ထိတွေ့ဆက်ဆံမလဲဆိုတာကို လမ်းညွှန်ထားပါတယ်။
+        </p>
+      </section>
+
+      <section className="mt-8">
+        <span className="text-accent font-bold text-sm block mb-2">စစ်မှန်မှုကို ဦးစားပေးခြင်း</span>
+        <p>
+          နည်းပညာကို အလွန်အကျွံ အားကိုးပြီး AI သက်သက်နဲ့ ပြုလုပ်ထားတဲ့ မားကတ်တင်းတွေဟာ စစ်မှန်မှု (Authenticity) နဲ့ လူသားဆန်မှုကို ပျောက်ဆုံးစေပါတယ်။ Marketing 7.0 က နည်းပညာကို ဉာဏ်ရည်ဉာဏ်သွေးရှိရှိ အသုံးချရင်း တစ်ဖက်မှာလည်း လူသားအချင်းချင်း ဖန်တီးနိုင်တဲ့ စစ်မှန်တဲ့ ယုံကြည်မှု (Trust) ကို တည်ဆောက်ဖို့ သတိပေးထားပါတယ်။
+        </p>
+      </section>
+
+      <div className="highlight-box mt-12 bg-slate-50 border-accent/20">
+        <span className="block text-lg text-primary mb-6 not-italic font-bold">ဥပမာ- ထမင်းဆိုင်တစ်ဆိုင်၏ Marketing ပြောင်းလဲပုံ</span>
+        
+        <div className="space-y-4 text-sm lg:text-base not-italic">
+          <p><span className="step-label">Marketing 1.0 (ထုတ်ကုန်ဗဟိုပြု):</span> "ကျွန်တော်တို့ဆိုင်က ဟင်းတွေ အကောင်းဆုံးနဲ့ အရသာအရှိဆုံးပါ။"</p>
+          <p><span className="step-label">Marketing 2.0 (ဖောက်သည်ဗဟိုပြု):</span> "ဝယ်သူအကြိုက် အချို၊ အစပ် စိတ်ကြိုက် ချက်ပေးပါတယ်။"</p>
+          <p><span className="step-label">Marketing 3.0 (တန်ဖိုးထားမှုဗဟိုပြု):</span> "ကျန်းမာရေးအတွက် ဆီသန့်နဲ့ အော်ဂဲနစ် ဟင်းသီးဟင်းရွက်တွေကိုသာ အသုံးပြုပါတယ်။"</p>
+          <p><span className="step-label">Marketing 4.0 (ဒစ်ဂျစ်တယ်ကူးပြောင်းမှု):</span> "ဆိုင်မှာသာမက၊ Facebook Page ကနေ ဟင်းအမယ်တွေကြည့်ပြီး Delivery နဲ့ပါ မှာလို့ရပါပြီ။"</p>
+          <p><span className="step-label">Marketing 5.0 (နည်းပညာအသုံးချမှု):</span> စနစ် (POS) နှင့် Data များကိုသုံးပြီး ဖောက်သည်ဟောင်းတွေအတွက် အထူး Promotion များကို ပို့ပေးသည်။</p>
+          <p><span className="step-label">Marketing 6.0 (ပေါင်းစပ်အတွေ့အကြုံ):</span> ဆိုင်မှာလာစားသလို၊ အွန်လိုင်းမှာလည်း ဆိုင်ရဲ့ ဟင်းချက်ပုံကို အနီးကပ် မြင်တွေ့ခံစားရစေသည်။</p>
+          <p><span className="step-label">Marketing 7.0 (စိတ်ပိုင်းဆိုင်ရာနှင့် စစ်မှန်မှု):</span> AI ကိုသုံးသော်လည်း၊ ဖောက်သည်များနှင့် ဆက်ဆံရာတွင် စစ်မှန်သော နွေးထွေးမှု (Authenticity) ဖြင့် ယုံကြည်မှု တည်ဆောက်သည်။</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Marketing7Insights10() {
+  return (
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-center border-none pl-0 mb-12 text-2xl lg:text-3xl text-primary">Marketing 7.0 မှာ လူတွေ မသိတဲ့ အချက် ၁၀ ခု</h2>
+
+      <p className="text-center italic text-text-light mb-12">ကျွန်တော် Marketing 7.0 စာအုပ်ကို ၃ ခေါက်ပြန်ဖတ်ပြီး ရရှိလာတဲ့ Insight Gems များ</p>
+
+      <InsightItem 
+        num="၁" 
+        title="Cognitive Outsourcing — ဖောက်သည်ရဲ့ ဦးနှောက်ကို AI ပြန်ကိုင်သွားပြီ" 
+        desc="ဒီနေ့ ဖောက်သည်က ပစ္စည်း ဝယ်မယ် ဆိုရင် သူ့ ဦးနှောက်နဲ့ ဆုံးဖြတ်တာ မဟုတ်တော့ပါဘူး။ AI ကို မေးပြီး ဆုံးဖြတ်တာ ဖြစ်ပါတယ်။"
+        highlight="ဒီနေ့ ဖောက်သည် ဆုံးဖြတ်ချက်ရဲ့ 70% က AI/digital tool က predict လုပ်ပေးထားပြီးသား ဖြစ်တယ်။"
+      />
+
+      <InsightItem 
+        num="၂" 
+        title="Attention Brain က 3 Second Rule ထက် ပိုတောင်းနေပြီ" 
+        desc="အရင်က 3 second rule ဆိုတာ ရှိခဲ့ပါတယ်။ အခု Attention span ပိုကျလာပြီး 1.7 second ဖြစ်လာပါတယ်။"
+      />
+
+      <InsightItem 
+        num="၃" 
+        title="Social Brain က Celebrity ထက် Micro-Influencer ကို ပိုယုံပြီ" 
+        desc="Nano-influencer (1K-10K follower) ရဲ့ conversion rate က Macro-influencer ထက် 7x ပိုကောင်းပါတယ်။"
+      />
+
+      <InsightItem 
+        num="၄" 
+        title="Reward Brain က Dopamine ကို burnout ဖြစ်နေပြီ" 
+        desc="Trend တိုင်း လိုက်လုပ်နေရတာ ဖောက်သည်လည်း မောနေပါပြီ။ Burnout ဖြစ်နေတဲ့ ဦးနှောက်ကို Lipstick Effect နဲ့ ဖြေရှင်းပါ။"
+      />
+
+      <InsightItem 
+        num="၅" 
+        title="AGI ရောက်ရင် Commander ဖြစ်မှာလား Orchestrator ဖြစ်မှာလား" 
+        desc="AI output ကို empathy နဲ့ ပေါင်းစပ်ပြီး ဖောက်သည်ဆီ deliver လုပ်နိုင်တဲ့ Orchestrator တွေပဲ အောင်မြင်ပါလိမ့်မယ်။"
+      />
+
+      <InsightItem 
+        num="၆" 
+        title="Homogenization — AI သုံးလွန်းလို့ Brand အားလုံး တူသွားပြီ" 
+        desc="AI ကို draft ရေးခိုင်းပါ။ ဒါပေမယ့် ကိုယ့် voice၊ ကိုယ့် story၊ ကိုယ့် personality တွေ ထည့်ပါ။"
+      />
+
+      <InsightItem 
+        num="၇" 
+        title="Brand Storytelling ရဲ့ Hidden Formula" 
+        desc="Story ရဲ့ 60% က conflict ဖြစ်ရပါမယ်။ 30% က struggle ဖြစ်ရမယ်။ 10% ပဲ resolution ဖြစ်ရပါမယ်။"
+      />
+
+      <InsightItem 
+        num="၈" 
+        title="Value Equation ရဲ့ Hidden Variable — Time" 
+        desc="Value = (Get × Dream Outcome × Likelihood) ÷ (Time × Effort × Price)။ Time ကို optimize လုပ်ပါ။"
+      />
+
+      <InsightItem 
+        num="၉" 
+        title="Selling 3.0 — ရောင်းတယ်ဆိုတာ ရှင်းပြတာ မဟုတ်တော့ဘူး" 
+        desc="ရောင်းသူ အလုပ်က Product feature ရှင်းတာ မဟုတ်ဘဲ ဖောက်သည်ရဲ့ hidden doubt များကို ဖယ်ရှားပေးတာ ဖြစ်ပါတယ်။"
+      />
+
+      <InsightItem 
+        num="၁၀" 
+        title="Peak-End Rule — Ending ကို Design လုပ်ပြီးပြီလား" 
+        desc="ဖောက်သည် အတွေ့အကြုံရဲ့ အမြင့်ဆုံး moment (Peak) နဲ့ နောက်ဆုံး moment (End) ကိုပဲ မှတ်မိတာ ဖြစ်ပါတယ်။"
+      />
+    </div>
+  );
+}
+
+function InsightItem({ num, title, desc, highlight }: { num: string, title: string, desc: string, highlight?: string }) {
+  return (
+    <section className="mb-12">
+      <div className="flex gap-4 items-start mb-4">
+        <span className="text-3xl font-bold text-accent/30 shrink-0 select-none leading-none">{num}။</span>
+        <h3 className="text-xl font-bold text-primary leading-tight">{title}</h3>
+      </div>
+      <p className="pl-0 lg:pl-12">{desc}</p>
+      {highlight && (
+        <div className="highlight-box ml-0 lg:ml-12 mt-4 bg-primary/5 border-primary/20 text-primary not-italic">
+          {highlight}
+        </div>
+      )}
+    </section>
   );
 }
 
