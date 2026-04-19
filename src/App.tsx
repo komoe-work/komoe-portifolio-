@@ -50,7 +50,7 @@ export default function App() {
             <div className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 overflow-hidden group bg-slate-50 relative">
               <img 
                 src="/komoe.svg" 
-                alt="Aung Zaw Moe Professional Profile" 
+                alt="Aung Zaw Moe (Ko Moe) Professional Profile" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onError={(e) => {
                   // Fallback if image fails to load
@@ -61,7 +61,7 @@ export default function App() {
               <User className="w-12 h-12 text-slate-300 absolute inset-0 m-auto hidden group-[.flex]:block" aria-hidden="true" />
             </div>
             <header className="border-b-2 border-accent pb-3 w-full text-center">
-              <h1 className="text-2xl font-bold text-primary tracking-tight">Aung Zaw Moe</h1>
+              <h1 className="text-2xl font-bold text-primary tracking-tight">Aung Zaw Moe (Ko Moe)</h1>
               <div className="text-[13px] uppercase tracking-wider font-extrabold text-accent mt-1">IT Manager</div>
             </header>
           </div>
