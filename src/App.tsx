@@ -47,8 +47,18 @@ export default function App() {
       <aside className="w-full lg:w-80 h-full bg-sidebar-bg border-r border-border-subtle p-8 overflow-y-auto flex flex-col gap-8 shrink-0">
         <div>
           <div className="flex flex-col items-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-slate-50 border border-border-subtle flex items-center justify-center shadow-inner mb-4 overflow-hidden group">
-              <User className="w-10 h-10 text-slate-300 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
+            <div className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 overflow-hidden group bg-slate-50 relative">
+              <img 
+                src="/komoe.png" 
+                alt="Aung Zaw Moe Professional Profile" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                onError={(e) => {
+                  // Fallback if image fails to load
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.classList.add('flex', 'items-center', 'justify-center');
+                }}
+              />
+              <User className="w-12 h-12 text-slate-300 absolute inset-0 m-auto hidden group-[.flex]:block" aria-hidden="true" />
             </div>
             <header className="border-b-2 border-accent pb-3 w-full text-center">
               <h1 className="text-2xl font-bold text-primary tracking-tight">Aung Zaw Moe</h1>
@@ -66,6 +76,7 @@ export default function App() {
             <button 
               className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg text-[11px] font-bold uppercase tracking-[0.15em] shadow-lg shadow-primary/10 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98] group"
               onClick={() => window.print()}
+              aria-label="Download professional resume"
             >
               <Download className="w-4 h-4 group-hover:animate-bounce" aria-hidden="true" />
               Download Resume
