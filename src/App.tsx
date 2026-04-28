@@ -29,7 +29,9 @@ import {
   ArrowDown,
   Download,
   User,
-  BarChart3
+  BarChart3,
+  Linkedin,
+  Facebook
 } from "lucide-react";
 
 const fadeIn = {
@@ -49,7 +51,7 @@ export default function App() {
       <aside className="w-full lg:w-80 h-full bg-sidebar-bg border-r border-border-subtle p-8 overflow-y-auto flex flex-col gap-8 shrink-0 focus-visible:outline-none">
         <div>
           <div className="flex flex-col items-center mb-6">
-            <div className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 overflow-hidden group bg-slate-50 relative">
+            <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full border-4 border-white shadow-xl mb-6 overflow-hidden group bg-slate-50 relative ring-1 ring-slate-100 mx-auto">
               <img 
                 src="/komoe.svg" 
                 alt="Aung Zaw Moe (Ko Moe) Professional Profile" 
@@ -62,9 +64,14 @@ export default function App() {
               />
               <User className="w-12 h-12 text-slate-300 absolute inset-0 m-auto hidden group-[.flex]:block" aria-hidden="true" />
             </div>
-            <header className="border-b-2 border-accent pb-3 w-full text-center">
-              <h1 className="text-2xl font-bold text-primary tracking-tight">Aung Zaw Moe (Ko Moe)</h1>
-              <div className="text-[13px] uppercase tracking-wider font-extrabold text-accent mt-1">IT Manager</div>
+            <header className="border-b-2 border-accent pb-4 w-full text-center">
+              <h1 className="text-3xl font-display font-bold text-primary tracking-tighter leading-tight">Aung Zaw Moe</h1>
+              <div className="mt-2.5 mb-2 flex items-center justify-center">
+                <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-50 text-[10px] font-extrabold text-stone-500 uppercase tracking-[0.25em] italic border border-slate-200 shadow-sm transition-transform hover:scale-105 cursor-default">
+                  Ko Moe
+                </span>
+              </div>
+              <div className="text-[13px] uppercase tracking-widest font-extrabold text-accent">IT Manager</div>
             </header>
           </div>
 
@@ -80,12 +87,24 @@ export default function App() {
               href="https://ai.mindset-it.online/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg text-[11px] font-bold uppercase tracking-[0.15em] shadow-lg shadow-primary/10 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98] group"
-              aria-label="Visit AI Mindset Learning Management System"
+              className="w-full flex items-center justify-center gap-3 bg-primary text-white py-3.5 rounded-xl text-[11px] font-bold uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98] group"
+              aria-label="Visit AI Mindset Website and LMS"
             >
-              <Globe className="w-4 h-4 group-hover:rotate-12 transition-transform" aria-hidden="true" />
-              Visit AI Mindset LMS
+              <Globe className="w-4 h-4 group-hover:animate-pulse" aria-hidden="true" />
+              AI Mindset Website
             </a>
+
+            <div className="flex items-center justify-center gap-4 pt-2 border-t border-border-subtle/50">
+              <a href="#" className="p-2 rounded-full text-text-light hover:text-primary hover:bg-slate-50 transition-all" aria-label="LinkedIn Profile">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61570808135698" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-text-light hover:text-primary hover:bg-slate-50 transition-all" aria-label="Facebook Profile">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="https://ai.mindset-it.online/" className="p-2 rounded-full text-text-light hover:text-primary hover:bg-slate-50 transition-all" aria-label="AI Mindset LMS">
+                <Globe className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
 
