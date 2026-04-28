@@ -76,14 +76,16 @@ export default function App() {
               <ContactItem icon={<MapPin className="w-3.5 h-3.5" aria-hidden="true" />} text="Yangon, Myanmar" />
             </div>
 
-            <button 
+            <a 
+              href="https://ai.mindset-it.online/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg text-[11px] font-bold uppercase tracking-[0.15em] shadow-lg shadow-primary/10 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98] group"
-              onClick={() => window.print()}
-              aria-label="Download professional resume"
+              aria-label="Visit AI Mindset Learning Management System"
             >
-              <Download className="w-4 h-4 group-hover:animate-bounce" aria-hidden="true" />
-              Download Resume
-            </button>
+              <Globe className="w-4 h-4 group-hover:rotate-12 transition-transform" aria-hidden="true" />
+              Visit AI Mindset LMS
+            </a>
           </div>
         </div>
 
