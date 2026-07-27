@@ -9,11 +9,13 @@ interface NavbarProps {
 
 const NAV_LINKS = [
   { id: "hero", label: "Home" },
+  { id: "choose-path", label: "Pathways" },
   { id: "what-i-do", label: "What I Do" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "ai-teaching", label: "AI Teaching" },
   { id: "skills", label: "Skills" },
+  { id: "cvs", label: "CVs" },
   { id: "contact", label: "Contact" },
 ];
 

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { ChoosePath } from "./components/ChoosePath";
+import { AboutAvailability } from "./components/AboutAvailability";
 import { TrustIndicators } from "./components/TrustIndicators";
 import { WhatIDo } from "./components/WhatIDo";
 import { FeaturedProjects } from "./components/FeaturedProjects";
 import { ExperienceTimeline } from "./components/ExperienceTimeline";
 import { TeachingSection } from "./components/TeachingSection";
 import { CertificationsAndSkills } from "./components/CertificationsAndSkills";
+import { CvSelectorSection } from "./components/CvSelectorSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
@@ -16,11 +19,14 @@ export default function App() {
   useEffect(() => {
     const sections = [
       "hero",
+      "choose-path",
+      "about",
       "what-i-do",
       "projects",
       "experience",
       "ai-teaching",
       "skills",
+      "cvs",
       "contact",
     ];
 
@@ -54,29 +60,38 @@ export default function App() {
         {/* 2. Hero Section */}
         <Hero />
 
-        {/* 3. Professional Trust Indicators */}
+        {/* 3. Pathways: Choose What You're Here For */}
+        <ChoosePath />
+
+        {/* 4. Brand Positioning & Career Availability */}
+        <AboutAvailability />
+
+        {/* 5. Professional Trust Indicators */}
         <TrustIndicators />
 
-        {/* 4. What I Do Section */}
+        {/* 6. What I Do Section */}
         <WhatIDo />
 
-        {/* 5. Featured Projects Section */}
+        {/* 7. Featured Projects Section */}
         <FeaturedProjects />
 
-        {/* 6. Professional Experience Timeline */}
+        {/* 8. Professional Experience Timeline */}
         <ExperienceTimeline />
 
-        {/* 7. AI Teaching Section */}
+        {/* 9. AI Teaching Section */}
         <TeachingSection />
 
-        {/* 8. Certifications and Skills */}
+        {/* 10. Certifications and Skills */}
         <CertificationsAndSkills />
 
-        {/* 9. Contact Call-to-Action */}
+        {/* 11. Professional CV Download Selector */}
+        <CvSelectorSection />
+
+        {/* 12. Contact Call-to-Action */}
         <ContactSection />
       </main>
 
-      {/* 10. Footer */}
+      {/* 13. Footer */}
       <Footer />
     </div>
   );

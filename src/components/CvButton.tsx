@@ -14,11 +14,23 @@ export function CvButton({
 }: CvButtonProps) {
   const [downloading, setDownloading] = React.useState(false);
 
-  const handleDownloadCv = async (e: React.MouseEvent) => {
+  const handleCvAction = (e: React.MouseEvent) => {
     e.preventDefault();
+    const cvSection = document.getElementById("cvs");
+    if (cvSection) {
+      const offset = 80;
+      const elementPosition = cvSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    } else {
+      handleDirectDownload();
+    }
+  };
+
+  const handleDirectDownload = async () => {
     setDownloading(true);
-    const cvUrl = "/ko-moe-summary-cv.html";
-    const fileName = "Aung-Zaw-Moe-Ko-Moe-Summary-CV.html";
+    const cvUrl = "/Aung-Zaw-Moe-Professional-Profile.html";
+    const fileName = "Aung-Zaw-Moe-Professional-Profile.html";
 
     try {
       const response = await fetch(cvUrl);
@@ -34,13 +46,7 @@ export function CvButton({
       window.URL.revokeObjectURL(blobUrl);
     } catch (err) {
       console.error("Direct download fallback active:", err);
-      const a = document.createElement("a");
-      a.href = cvUrl;
-      a.download = fileName;
-      a.target = "_blank";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      window.open(cvUrl, "_blank");
     } finally {
       setTimeout(() => setDownloading(false), 600);
     }
@@ -63,25 +69,24 @@ export function CvButton({
   return (
     <div className={`inline-flex flex-wrap items-center gap-2.5 ${className}`}>
       <button
-        onClick={handleDownloadCv}
+        onClick={handleCvAction}
         disabled={downloading}
         className={`inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all active:scale-[0.98] cursor-pointer disabled:opacity-70 min-h-[44px] ${getVariantStyles()}`}
-        aria-label="Download Aung Zaw Moe (Ko Moe) Professional CV"
+        aria-label="Select and Download Aung Zaw Moe (Ko Moe) Professional CV"
       >
         <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
-        <span>{downloading ? "Downloading..." : "Download CV"}</span>
+        <span>{downloading ? "Downloading..." : "Select & Download CV"}</span>
       </button>
 
       {showViewButton && (
         <a
-          href="/ko-moe-summary-cv.html"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#cvs"
+          onClick={handleCvAction}
           className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl font-bold text-xs uppercase tracking-wider bg-primary text-white hover:bg-slate-800 shadow-md transition-all active:scale-[0.98] min-h-[44px]"
-          aria-label="View Aung Zaw Moe (Ko Moe) Professional CV in browser"
+          aria-label="View Aung Zaw Moe (Ko Moe) Professional CV options"
         >
           <FileText className="w-4 h-4 shrink-0" aria-hidden="true" />
-          <span>View CV</span>
+          <span>View CV Options</span>
         </a>
       )}
     </div>
