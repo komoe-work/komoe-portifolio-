@@ -77,14 +77,14 @@ export default function App() {
 
           <div className="space-y-6">
             <div className="space-y-2">
-              <ContactItem icon={<Globe className="w-3.5 h-3.5" aria-hidden="true" />} text="ai.mindset-it.online" link="https://ai.mindset-it.online/" />
+              <ContactItem icon={<Globe className="w-3.5 h-3.5" aria-hidden="true" />} text="ai-mindset.komoe.org" link="https://ai-mindset.komoe.org/" />
               <ContactItem icon={<Mail className="w-3.5 h-3.5" aria-hidden="true" />} text="komoe@mindset-it.online" link="mailto:komoe@mindset-it.online" />
               <ContactItem icon={<Phone className="w-3.5 h-3.5" aria-hidden="true" />} text="09-454235411" />
               <ContactItem icon={<MapPin className="w-3.5 h-3.5" aria-hidden="true" />} text="Yangon, Myanmar" />
             </div>
 
             <a 
-              href="https://ai.mindset-it.online/"
+              href="https://ai-mindset.komoe.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-3 bg-primary text-white py-3.5 rounded-xl text-[11px] font-bold uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98] group"
@@ -101,7 +101,7 @@ export default function App() {
               <a href="https://www.facebook.com/profile.php?id=61570808135698" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-text-light hover:text-primary hover:bg-slate-50 transition-all" aria-label="Facebook Profile">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://ai.mindset-it.online/" className="p-2 rounded-full text-text-light hover:text-primary hover:bg-slate-50 transition-all" aria-label="AI Mindset LMS">
+              <a href="https://ai-mindset.komoe.org/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-text-light hover:text-primary hover:bg-slate-50 transition-all" aria-label="AI Mindset LMS">
                 <Globe className="w-4 h-4" />
               </a>
             </div>
