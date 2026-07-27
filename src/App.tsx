@@ -31,7 +31,9 @@ import {
   User,
   BarChart3,
   Linkedin,
-  Facebook
+  Facebook,
+  GraduationCap,
+  Sparkles
 } from "lucide-react";
 
 const fadeIn = {
@@ -71,14 +73,14 @@ export default function App() {
                   Ko Moe
                 </span>
               </div>
-              <div className="text-[13px] uppercase tracking-widest font-extrabold text-accent">IT Manager</div>
+              <div className="text-[12px] uppercase tracking-wider font-extrabold text-accent">IT Manager & AI Career Instructor</div>
             </header>
           </div>
 
           <div className="space-y-6">
             <div className="space-y-2">
               <ContactItem icon={<Globe className="w-3.5 h-3.5" aria-hidden="true" />} text="ai-mindset.komoe.org" link="https://ai-mindset.komoe.org/" />
-              <ContactItem icon={<Mail className="w-3.5 h-3.5" aria-hidden="true" />} text="komoe@mindset-it.online" link="mailto:komoe@mindset-it.online" />
+              <ContactItem icon={<Mail className="w-3.5 h-3.5" aria-hidden="true" />} text="komoe@komoe.org" link="mailto:komoe@komoe.org" />
               <ContactItem icon={<Phone className="w-3.5 h-3.5" aria-hidden="true" />} text="09-454235411" />
               <ContactItem icon={<MapPin className="w-3.5 h-3.5" aria-hidden="true" />} text="Yangon, Myanmar" />
             </div>
@@ -141,14 +143,14 @@ export default function App() {
           <section>
             <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light mb-3 block">Executive Profile</span>
             <p className="text-[12.5px] text-text-main leading-relaxed">
-              Results-driven IT Manager with 10+ years of expertise in enterprise infrastructure, intelligent transit systems, and large-scale property management. Proven track record aligning IT operations with business goals.
+              Results-driven IT Manager & AI Career Instructor with 10+ years of expertise in enterprise infrastructure and practical AI education. Teaches weekend online classes helping students build job-ready skills, workflow automation, and real-world AI projects.
             </p>
           </section>
 
           <section>
-            <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light mb-3 block">Tech Stack</span>
+            <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light mb-3 block">Tech Stack & Teaching</span>
             <div className="flex flex-wrap gap-1.5">
-              {["AWS Cloud", "Docker", "Google Cloud Platform (GCP)", "Cloudflare IaaS", "Proxmox Virtual Environment (PVE)", "Ollama AI", "MS EDR", "NAS Solution", "Nessus", "Software as a Service (SaaS)"].map((skill, i) => (
+              {["AI Career Education", "Workflow Automation", "AWS Cloud", "Docker", "Google Cloud Platform (GCP)", "Ollama AI", "Cloudflare IaaS", "Proxmox PVE", "MS EDR", "NAS Solution", "Nessus", "SaaS"].map((skill, i) => (
                 <span key={skill} className={`px-2.5 py-1 border border-border-subtle rounded text-[10.5px] font-semibold ${i < 2 ? 'bg-primary text-white border-transparent' : 'bg-slate-50 text-primary'}`}>
                   {skill}
                 </span>
@@ -169,28 +171,71 @@ export default function App() {
 
       {/* MAIN CONTENT */}
       <main className="flex-1 h-full p-6 lg:p-10 overflow-y-auto flex flex-col gap-6">
-        {/* Consultancy Highlight Card */}
-        <motion.div 
-          {...fadeIn}
-          className="bg-primary text-white p-6 lg:p-8 rounded-xl flex justify-between items-center shadow-lg relative overflow-hidden group"
-        >
-          <div className="relative z-10 flex flex-col gap-1">
-            <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-white/60">Independent Consulting</span>
-            <h3 className="text-xl font-bold tracking-tight">Mindset IT Solutions</h3>
-            <p className="text-[13px] opacity-80 font-medium">Strategic CTO services & Secure Infrastructure Delivery</p>
-            <div className="flex flex-wrap gap-2 mt-4">
-              <span className="text-[10px] px-2 py-0.5 border border-white/30 rounded bg-white/10 font-medium">Cloud Architecture</span>
-              <span className="text-[10px] px-2 py-0.5 border border-white/30 rounded bg-white/10 font-medium">AI Security</span>
-              <span className="text-[10px] px-2 py-0.5 border border-white/30 rounded bg-white/10 font-medium">Global Remote Support</span>
+        {/* Highlight Banner Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* AI Career Instructor Card */}
+          <motion.div 
+            {...fadeIn}
+            className="bg-gradient-to-br from-slate-900 via-primary to-slate-950 text-white p-6 rounded-xl flex flex-col justify-between shadow-lg relative overflow-hidden group border border-slate-800"
+          >
+            <div className="relative z-10 flex flex-col gap-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-accent">Weekend Online Teaching</span>
+                <span className="text-[10px] bg-accent/20 text-accent px-2.5 py-0.5 rounded-full font-bold border border-accent/30 flex items-center gap-1">
+                  <Calendar className="w-3 h-3" aria-hidden="true" /> Sat & Sun
+                </span>
+              </div>
+              <h3 className="text-xl font-bold tracking-tight text-white flex items-center gap-2 mt-1">
+                <GraduationCap className="w-5 h-5 text-accent shrink-0" aria-hidden="true" />
+                AI Career Instructor
+              </h3>
+              <p className="text-[12.5px] text-slate-300 font-normal leading-relaxed">
+                Teaching practical AI for research, productivity, website creation, workflow automation, and job-ready career skills.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                <span className="text-[10px] px-2 py-0.5 border border-slate-700 rounded bg-slate-800/80 text-slate-200 font-medium">Project-Based Training</span>
+                <span className="text-[10px] px-2 py-0.5 border border-slate-700 rounded bg-slate-800/80 text-slate-200 font-medium">Portfolio Mentorship</span>
+                <span className="text-[10px] px-2 py-0.5 border border-slate-700 rounded bg-slate-800/80 text-slate-200 font-medium">Workflow Automation</span>
+              </div>
             </div>
-          </div>
-          <Settings className="w-16 h-16 opacity-10 rotate-12 absolute right-6 group-hover:rotate-45 transition-transform duration-700" />
-        </motion.div>
+            <Sparkles className="w-24 h-24 opacity-10 -rotate-12 absolute -right-3 -bottom-3 group-hover:rotate-12 transition-transform duration-700 text-accent" aria-hidden="true" />
+          </motion.div>
+
+          {/* Consultancy Highlight Card */}
+          <motion.div 
+            {...fadeIn}
+            className="bg-primary text-white p-6 rounded-xl flex flex-col justify-between shadow-lg relative overflow-hidden group border border-slate-800"
+          >
+            <div className="relative z-10 flex flex-col gap-1.5">
+              <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-white/60">Independent Consulting</span>
+              <h3 className="text-xl font-bold tracking-tight flex items-center gap-2 mt-1">
+                <Settings className="w-5 h-5 text-white/80 shrink-0" aria-hidden="true" />
+                Mindset IT Solutions
+              </h3>
+              <p className="text-[12.5px] opacity-80 font-normal leading-relaxed">
+                Strategic CTO services & Secure Infrastructure Delivery. Global remote support and cloud architecture.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                <span className="text-[10px] px-2 py-0.5 border border-white/20 rounded bg-white/10 font-medium">Cloud Architecture</span>
+                <span className="text-[10px] px-2 py-0.5 border border-white/20 rounded bg-white/10 font-medium">AI Security</span>
+                <span className="text-[10px] px-2 py-0.5 border border-white/20 rounded bg-white/10 font-medium">Remote Support</span>
+              </div>
+            </div>
+            <Settings className="w-24 h-24 opacity-10 rotate-12 absolute -right-3 -bottom-3 group-hover:rotate-45 transition-transform duration-700" aria-hidden="true" />
+          </motion.div>
+        </div>
 
         {/* Professional History */}
         <section className="flex flex-col gap-4">
-          <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light">Professional History</span>
+          <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light">Professional History & Teaching</span>
           <div className="grid grid-cols-1 gap-4">
+            <ExperienceCard 
+              role="AI Career Instructor (Weekend Online Classes)"
+              company="AI Mindset Education & Mentorship"
+              date="Sat & Sun | 2024 – Present"
+              desc="AI Career Instructor with practical experience teaching students how to use artificial intelligence for research, productivity, career development, website creation, workflow automation, and business solutions. Skilled in delivering project-based training, mentoring learners, and helping students build job-ready skills, professional portfolios, and real-world AI projects. Passionate about making AI education practical, accessible, and career-focused."
+              highlight
+            />
             <ExperienceCard 
               role="IT Specialist (Dept Head)"
               company="IIDA Electronic (Myanmar) Co.,Ltd"
