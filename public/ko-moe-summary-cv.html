@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aung Zaw Moe (Ko Moe) | Professional Summary CV</title>
-  <meta name="description" content="Professional summary CV of Aung Zaw Moe (Ko Moe), an IT Manager, Systems Specialist, AI Career Instructor, and AI Solution Builder.">
+  <title>Aung Zaw Moe (Ko Moe) | Professional CV</title>
+  <meta name="description" content="Recruiter-friendly professional CV of Aung Zaw Moe (Ko Moe) - IT Manager, AI Career Instructor, and Digital Solution Builder.">
   <meta name="author" content="Aung Zaw Moe (Ko Moe)">
   <link rel="canonical" href="https://komoe.org/ko-moe-summary-cv.html">
   
@@ -15,7 +15,7 @@
     "@type": "Person",
     "name": "Aung Zaw Moe",
     "alternateName": "Ko Moe",
-    "jobTitle": "IT Manager & AI Career Instructor",
+    "jobTitle": "IT Manager | AI Career Instructor | Digital Solution Builder",
     "url": "https://komoe.org/",
     "email": "komoe@komoe.org",
     "telephone": "09-454235411",
@@ -26,31 +26,31 @@
     },
     "sameAs": [
       "https://ai-mindset.komoe.org/",
+      "https://www.linkedin.com/in/aung-zaw-moe-ko-moe/",
       "https://www.facebook.com/profile.php?id=61570808135698"
     ],
     "knowsAbout": [
       "IT Management",
-      "AI Career Skills Training",
-      "Workflow Automation",
-      "AI Prompt Engineering",
       "Systems Infrastructure",
-      "Cloud Architecture"
+      "AI Career Training",
+      "Prompt Engineering",
+      "Workflow Automation",
+      "ISO 27001 ISMS"
     ]
   }
   </script>
 
   <style>
-    /* CSS Variables & Reset */
+    /* CSS Variables & Theme Reset */
     :root {
-      --primary: #0f172a;
-      --primary-light: #1e293b;
-      --accent: #d97706;
-      --accent-hover: #b45309;
-      --text-main: #334155;
-      --text-muted: #64748b;
+      --primary: #0f172a;       /* Deep Navy */
+      --primary-subtle: #1e293b;
+      --accent: #d97706;        /* Warm Gold Accent */
+      --text-main: #334155;     /* Dark Gray Body */
+      --text-muted: #64748b;    /* Muted Gray */
       --bg-page: #f8fafc;
       --bg-card: #ffffff;
-      --border: #e2e8f0;
+      --border: #e2e8f0;        /* Light Gray Divider */
       --border-dark: #cbd5e1;
     }
 
@@ -64,27 +64,27 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
       background-color: var(--bg-page);
-      line-height: 1.6;
-      font-size: 14px;
+      line-height: 1.4;
+      font-size: 13px;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: #2563eb;
+      color: #1d4ed8;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
 
-    /* Container A4 Style */
+    /* Screen Wrapper */
     .page-wrapper {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 820px;
+      margin: 24px auto;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      border-radius: 8px;
       overflow: hidden;
     }
 
@@ -92,13 +92,13 @@
     .toolbar {
       background: var(--primary);
       color: #ffffff;
-      padding: 16px 32px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      border-bottom: 1px solid var(--primary-light);
+      border-bottom: 1px solid var(--primary-subtle);
     }
     .toolbar-info {
       display: flex;
@@ -106,31 +106,30 @@
       gap: 2px;
     }
     .toolbar-title {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #94a3b8;
+      color: #cbd5e1;
     }
     .toolbar-note {
       font-size: 11px;
-      color: #cbd5e1;
-      font-style: italic;
+      color: #94a3b8;
     }
     .toolbar-actions {
       display: flex;
-      gap: 12px;
+      gap: 10px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
+      gap: 6px;
+      padding: 7px 14px;
       border-radius: 6px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
       text-decoration: none;
       border: none;
     }
@@ -139,206 +138,309 @@
       color: #ffffff;
     }
     .btn-primary:hover {
-      background: var(--accent-hover);
+      background: #b45309;
       text-decoration: none;
     }
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.12);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.22);
       text-decoration: none;
     }
 
-    /* CV Content Layout */
+    /* Main CV Canvas */
     .cv-content {
-      padding: 48px;
+      padding: 36px 40px;
     }
 
-    /* Header */
+    /* 1. Header */
     .cv-header {
       border-bottom: 2px solid var(--primary);
-      padding-bottom: 24px;
-      margin-bottom: 28px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+    .header-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 12px;
+      margin-bottom: 10px;
     }
     .candidate-name {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 800;
       color: var(--primary);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
     }
     .candidate-title {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 6px;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
     }
-    .contact-grid {
+    .contact-row {
       display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 13px;
-      text-align: right;
-    }
-    @media (max-width: 640px) {
-      .contact-grid {
-        text-align: left;
-      }
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 18px;
+      font-size: 12px;
+      color: var(--text-main);
+      background: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
     }
     .contact-item {
-      color: var(--text-main);
-    }
-    .contact-item strong {
-      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
     }
 
     /* Section Styling */
-    section {
-      margin-bottom: 28px;
-    }
-    section:last-child {
-      margin-bottom: 0;
+    .cv-section {
+      margin-bottom: 16px;
     }
     .section-title {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
-      margin-bottom: 14px;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      break-after: avoid;
+      page-break-after: avoid;
     }
     .section-title::before {
       content: "";
       display: inline-block;
-      width: 4px;
-      height: 14px;
+      width: 3px;
+      height: 12px;
       background-color: var(--accent);
-      border-radius: 2px;
+      border-radius: 1px;
     }
 
     p {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       color: var(--text-main);
-      text-align: justify;
+      text-align: left;
     }
 
-    /* Grid for Core Competencies */
-    .skills-grid {
+    /* 3 Career Highlights Row */
+    .highlights-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 4px;
     }
-    .skill-card {
+    .highlight-card {
       background: #f8fafc;
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
+      border-left: 3px solid var(--primary);
+      padding: 8px 10px;
+      border-radius: 4px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-    .skill-card h3 {
+    .highlight-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .highlight-desc {
+      font-size: 11.5px;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    /* Experience Items */
+    .experience-entry {
+      margin-bottom: 12px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .experience-entry:last-child {
+      margin-bottom: 0;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .exp-role {
       font-size: 13px;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
     }
-    .skill-card ul {
-      list-style-type: disc;
-      padding-left: 18px;
-    }
-    .skill-card li {
+    .exp-company {
       font-size: 12.5px;
-      color: var(--text-main);
-      margin-bottom: 4px;
+      font-weight: 600;
+      color: #475569;
+    }
+    .exp-date {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
-    /* List styling */
     .styled-list {
       list-style-type: disc;
-      padding-left: 20px;
-      margin-bottom: 12px;
+      padding-left: 18px;
+      margin-top: 3px;
     }
     .styled-list li {
-      margin-bottom: 6px;
+      font-size: 12px;
+      margin-bottom: 3px;
       color: var(--text-main);
+      line-height: 1.38;
     }
 
-    /* Callout Box */
-    .cta-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 16px;
+    /* Skills Columns */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
     }
-    .cta-box p {
-      text-align: center;
-      font-weight: 600;
-      color: #1e3a8a;
-      margin-bottom: 12px;
-    }
-    .btn-portfolio {
-      background: var(--primary);
-      color: #ffffff;
-      padding: 10px 20px;
+    .skill-group {
+      background: #f8fafc;
+      border: 1px solid var(--border);
       border-radius: 6px;
-      font-weight: 700;
-      font-size: 13px;
-      display: inline-block;
-      transition: background 0.2s;
+      padding: 10px 12px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-    .btn-portfolio:hover {
-      background: #1e293b;
-      text-decoration: none;
+    .skill-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-group ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .skill-group li {
+      font-size: 11.5px;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 12px;
+    }
+    .skill-group li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Portfolio Selected Projects */
+    .project-entry {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .project-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .project-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .project-desc {
+      font-size: 12px;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+    .project-meta {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* Tech Stack / Certs Horizontal Row */
+    .cert-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .info-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .info-card-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
 
     /* Footer */
     .cv-footer {
       border-top: 1px solid var(--border);
-      padding-top: 18px;
-      margin-top: 36px;
-      font-size: 12px;
+      padding-top: 10px;
+      margin-top: 16px;
+      font-size: 11px;
       color: var(--text-muted);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
 
-    /* PRINT SPECIFIC STYLES */
+    /* PRINT SPECIFIC RECRUITER-FRIENDLY A4 STYLES */
     @page {
       size: A4;
-      margin: 12mm 12mm 14mm 12mm;
+      margin: 12mm 13mm;
     }
 
     @media print {
-      html, body, * {
+      html, body {
+        background-color: #ffffff !important;
+        font-size: 10pt !important;
+        line-height: 1.38 !important;
+        color: var(--text-main) !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
-      }
-
-      body {
-        background-color: #ffffff !important;
-        font-size: 10.5pt !important;
-        line-height: 1.45 !important;
-        color: var(--text-main) !important;
       }
 
       .page-wrapper {
@@ -348,7 +450,6 @@
         border: none !important;
         box-shadow: none !important;
         border-radius: 0 !important;
-        overflow: visible !important;
         background: transparent !important;
       }
 
@@ -361,118 +462,144 @@
       }
 
       .candidate-name {
-        font-size: 22pt !important;
-        color: var(--primary) !important;
+        font-size: 20pt !important;
       }
 
       .candidate-title {
-        font-size: 9.5pt !important;
-        color: var(--accent) !important;
+        font-size: 10pt !important;
+      }
+
+      .contact-row {
+        background: #f8fafc !important;
+        border: 1px solid var(--border) !important;
+        padding: 6px 10px !important;
+        font-size: 9pt !important;
+        gap: 8px 14px !important;
+      }
+
+      .cv-section {
+        margin-bottom: 12pt !important;
       }
 
       .section-title {
-        font-size: 11pt !important;
-        margin-bottom: 8px !important;
-        padding-bottom: 4px !important;
-        color: var(--primary) !important;
-        border-bottom: 1px solid var(--border) !important;
+        font-size: 10.5pt !important;
+        margin-bottom: 6pt !important;
+        padding-bottom: 3pt !important;
         break-after: avoid !important;
         page-break-after: avoid !important;
       }
 
-      .section-title::before {
-        background-color: var(--accent) !important;
-      }
-
-      section {
-        margin-bottom: 15px !important;
-        break-inside: auto !important;
-        page-break-inside: auto !important;
-      }
-
       p {
-        margin-bottom: 6px !important;
-        text-align: left !important;
+        margin-bottom: 4pt !important;
+      }
+
+      .highlights-grid {
+        gap: 8px !important;
+      }
+
+      .highlight-card {
+        padding: 6px 8px !important;
+        border-left: 2pt solid var(--primary) !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .highlight-title {
+        font-size: 9.5pt !important;
+      }
+
+      .highlight-desc {
+        font-size: 8.5pt !important;
+      }
+
+      .experience-entry {
+        margin-bottom: 8pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .exp-role {
+        font-size: 10pt !important;
+      }
+
+      .exp-company {
+        font-size: 9.5pt !important;
+      }
+
+      .exp-date {
+        font-size: 8.5pt !important;
       }
 
       .styled-list {
-        margin-bottom: 7px !important;
+        padding-left: 14pt !important;
+        margin-top: 2pt !important;
       }
 
       .styled-list li {
-        margin-bottom: 2px !important;
+        font-size: 9pt !important;
+        margin-bottom: 2pt !important;
       }
 
-      /* Core Competencies Grid in Print */
       .skills-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
+        gap: 8px !important;
       }
 
-      .skill-card {
-        background: #f8fafc !important;
-        border: 1px solid var(--border) !important;
-        border-radius: 6px !important;
-        padding: 10px 12px !important;
+      .skill-group {
+        padding: 8px 10px !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
 
-      .skill-card h3 {
-        font-size: 11px !important;
-        margin-bottom: 5px !important;
-        color: var(--primary) !important;
+      .skill-group-title {
+        font-size: 9pt !important;
+        margin-bottom: 4pt !important;
+        padding-bottom: 2pt !important;
       }
 
-      .skill-card ul {
-        padding-left: 16px !important;
+      .skill-group li {
+        font-size: 8.5pt !important;
+        margin-bottom: 2pt !important;
       }
 
-      .skill-card li {
-        margin-bottom: 2px !important;
-        line-height: 1.4 !important;
-        font-size: 10.5px !important;
-      }
-
-      /* Callout box */
-      .cta-box {
-        background: #eff6ff !important;
-        border: 1px solid #bfdbfe !important;
-        border-radius: 8px !important;
-        padding: 14px !important;
-        margin-top: 10px !important;
+      .project-entry {
+        margin-bottom: 6pt !important;
+        padding-bottom: 5pt !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
 
-      .cta-box p {
-        margin-bottom: 8px !important;
-        text-align: center !important;
+      .project-title {
+        font-size: 9.5pt !important;
       }
 
-      .btn-portfolio {
-        background: transparent !important;
-        color: var(--primary) !important;
-        border: 1px solid var(--primary) !important;
-        padding: 6px 14px !important;
-        font-size: 11px !important;
-        box-shadow: none !important;
+      .project-desc {
+        font-size: 9pt !important;
       }
 
-      .cv-header,
-      .cv-footer {
+      .project-meta {
+        font-size: 8.5pt !important;
+      }
+
+      .info-card {
+        padding: 6px 10px !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
+      }
+
+      .info-card-title {
+        font-size: 9pt !important;
       }
 
       .cv-footer {
-        margin-top: 20px !important;
-        padding-top: 12px !important;
+        margin-top: 10pt !important;
+        padding-top: 6pt !important;
+        font-size: 8.5pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       }
 
       a {
-        color: #2563eb !important;
+        color: #1d4ed8 !important;
         text-decoration: underline !important;
       }
     }
@@ -481,205 +608,241 @@
 <body>
 
   <div class="page-wrapper">
-    <!-- Toolbar for Web Visitors -->
+    <!-- Toolbar for Web Visitors (Hidden in Print) -->
     <div class="toolbar" id="cv-toolbar">
       <div class="toolbar-info">
-        <div class="toolbar-title">HTML Format • Professional Summary • Updated 2026</div>
-        <div class="toolbar-note">For the best PDF result: select A4, enable Background graphics, and disable Headers and footers.</div>
+        <div class="toolbar-title">Recruiter-Optimized CV • Updated 2026</div>
+        <div class="toolbar-note">For clean PDF output: select A4 size, 100% scale, disable headers/footers, and enable background graphics.</div>
       </div>
       <div class="toolbar-actions">
         <button onclick="window.print()" class="btn btn-secondary" aria-label="Print or Save CV as PDF">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
           Print / Save as PDF
         </button>
         <a href="https://komoe.org/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-          Visit Main Portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          Main Portfolio
         </a>
       </div>
     </div>
 
-    <!-- CV Body -->
+    <!-- CV Content Body -->
     <main class="cv-content">
-      <!-- Header -->
+      
+      <!-- 1. HEADER -->
       <header class="cv-header">
-        <div>
-          <h1 class="candidate-name">Aung Zaw Moe (Ko Moe)</h1>
-          <div class="candidate-title">IT Manager | Systems Specialist | AI Career Instructor | AI Solution Builder</div>
+        <div class="header-top">
+          <div>
+            <h1 class="candidate-name">Aung Zaw Moe (Ko Moe)</h1>
+            <div class="candidate-title">IT Manager | AI Career Instructor | Digital Solution Builder</div>
+          </div>
         </div>
-        <div class="contact-grid">
+        <div class="contact-row">
           <div class="contact-item"><strong>Email:</strong> komoe@komoe.org</div>
           <div class="contact-item"><strong>Phone:</strong> 09-454235411</div>
           <div class="contact-item"><strong>Location:</strong> Yangon, Myanmar</div>
-          <div class="contact-item"><strong>Portfolio:</strong> <a href="https://komoe.org/" target="_blank" rel="noopener noreferrer">https://komoe.org/</a></div>
-          <div class="contact-item"><strong>AI LMS:</strong> <a href="https://ai-mindset.komoe.org/" target="_blank" rel="noopener noreferrer">https://ai-mindset.komoe.org/</a></div>
+          <div class="contact-item"><strong>Portfolio:</strong> <a href="https://komoe.org/" target="_blank" rel="noopener noreferrer">komoe.org</a></div>
+          <div class="contact-item"><strong>AI LMS:</strong> <a href="https://ai-mindset.komoe.org/" target="_blank" rel="noopener noreferrer">ai-mindset.komoe.org</a></div>
         </div>
       </header>
 
-      <!-- Professional Summary -->
-      <section>
+      <!-- 2. FOCUSED PROFESSIONAL SUMMARY -->
+      <section class="cv-section">
         <h2 class="section-title">Professional Summary</h2>
         <p>
-          Technology and AI education professional with practical experience in IT management, systems support, digital solution development, and AI career skills training. Experienced in helping students and professionals apply artificial intelligence to research, productivity, academic work, website development, web applications, workflow automation, digital content creation, and career preparation.
-        </p>
-        <p>
-          Combines technical problem-solving, project development, and practical teaching methods to make complex technologies easier to understand and apply. Focused on helping learners move beyond basic AI usage and develop career-ready skills through real-world projects, structured learning, and professional portfolio development.
+          IT and AI education professional with experience in systems management, technical support, digital solution development, and practical AI career training. Skilled in helping students and organizations apply AI to research, productivity, workflow automation, website development, and career-focused projects. Combines technical problem-solving with clear, project-based teaching to turn complex technologies into practical outcomes.
         </p>
       </section>
 
-      <!-- Core Competencies -->
-      <section>
-        <h2 class="section-title">Core Competencies</h2>
+      <!-- 3. THREE CAREER HIGHLIGHTS -->
+      <section class="cv-section">
+        <h2 class="section-title">Career Highlights</h2>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="highlight-title">IT & Systems Experience</div>
+            <div class="highlight-desc">Enterprise server infrastructure, endpoint defense (MS EDR), and ISO 27001 ISMS security compliance.</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-title">AI Career Instruction</div>
+            <div class="highlight-desc">Project-based online classes in prompt engineering, AI research, and automated workflow design.</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-title">Digital & Business Solutions</div>
+            <div class="highlight-desc">Web application development, citywide transit telematics (YBS), and property BMS/ELV infrastructure.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PROFESSIONAL EXPERIENCE -->
+      <section class="cv-section">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">IT Specialist (Dept Head)</span>
+              <span class="exp-company"> — IIDA Electronic (Myanmar) Co.,Ltd</span>
+            </div>
+            <span class="exp-date">2018 – Present</span>
+          </div>
+          <ul class="styled-list">
+            <li>Oversees enterprise server infrastructure, system security, and endpoint protection (MS EDR) for electronic manufacturing operations.</li>
+            <li>Maintains ISO 27001 (ISMS), ISO 9001 (QMS), and ISO 14000 (EMS) compliance standards and security policies.</li>
+            <li>Manages cross-border data synchronization, procurement CRM systems, and technical support operations.</li>
+          </ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">IT Manager</span>
+              <span class="exp-company"> — Asia Starmar Transport Intelligent (ASTI)</span>
+            </div>
+            <span class="exp-date">2017 – 2018</span>
+          </div>
+          <ul class="styled-list">
+            <li>Spearheaded Yangon Bus System (YBS) Intelligent framework integrating GPS telematics, passenger flow monitoring, and YPS card electronic payment processing.</li>
+            <li>Coordinated technical teams to deploy enterprise transit payment infrastructure across citywide bus fleets.</li>
+          </ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">Property Management IT Lead</span>
+              <span class="exp-company"> — Golden Land Real Estate (Golden City)</span>
+            </div>
+            <span class="exp-date">2014 – 2017</span>
+          </div>
+          <ul class="styled-list">
+            <li>Managed network operations, access controls, and Extra Low Voltage (ELV) infrastructure for a 300+ employee real estate complex.</li>
+            <li>Integrated Building Management Systems (BMS) and facility IT support operations for commercial real estate.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. SELECTED CORE SKILLS -->
+      <section class="cv-section">
+        <h2 class="section-title">Selected Core Skills</h2>
         <div class="skills-grid">
-          <div class="skill-card">
-            <h3>AI Education & Training</h3>
+          <div class="skill-group">
+            <div class="skill-group-title">IT & Systems</div>
             <ul>
-              <li>AI Career Skills Training</li>
-              <li>AI Prompt Engineering</li>
-              <li>Practical AI Tool Application</li>
-              <li>Online & Live Zoom Teaching</li>
-              <li>Student Mentoring</li>
-              <li>Curriculum & Learning Development</li>
-              <li>Project-Based Learning</li>
+              <li>IT Management</li>
+              <li>Systems Infrastructure</li>
+              <li>Technical Support</li>
+              <li>Security & Implementation</li>
             </ul>
           </div>
-
-          <div class="skill-card">
-            <h3>AI & Business Solutions</h3>
+          <div class="skill-group">
+            <div class="skill-group-title">AI Education</div>
             <ul>
-              <li>AI-Assisted Research</li>
-              <li>AI Workflow Design</li>
-              <li>Process Automation</li>
-              <li>Business Solution Development</li>
-              <li>AI-Assisted Productivity</li>
-              <li>AI Marketing Content Creation</li>
+              <li>AI Career Training</li>
+              <li>Prompt Engineering</li>
+              <li>AI Research</li>
+              <li>Student Mentoring</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Digital Solutions</div>
+            <ul>
+              <li>AI Workflow Automation</li>
+              <li>Web Application Development</li>
+              <li>Business Solutions</li>
               <li>Data Analysis & Presentation</li>
             </ul>
           </div>
-
-          <div class="skill-card">
-            <h3>Web & Digital Development</h3>
-            <ul>
-              <li>AI-Assisted Website Development</li>
-              <li>Web Application Development</li>
-              <li>Digital Product Prototyping</li>
-              <li>User-Focused Solution Design</li>
-              <li>Project Documentation</li>
-              <li>GitHub-Based Workflows</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <h3>Career Development</h3>
-            <ul>
-              <li>Resume & CV Development</li>
-              <li>Professional Email Writing</li>
-              <li>Interview Preparation</li>
-              <li>Portfolio Project Guidance</li>
-              <li>Freelance Career Preparation</li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <h3>IT & Systems</h3>
-            <ul>
-              <li>IT Management</li>
-              <li>Systems Support & Infrastructure</li>
-              <li>Technical Troubleshooting</li>
-              <li>Technology Implementation</li>
-              <li>User Training & Documentation</li>
-            </ul>
-          </div>
         </div>
       </section>
 
-      <!-- AI Teaching Experience -->
-      <section>
+      <!-- 6. AI TEACHING EXPERIENCE -->
+      <section class="cv-section">
         <h2 class="section-title">AI Teaching Experience</h2>
-        <div style="margin-bottom: 12px;">
-          <strong style="font-size: 15px; color: var(--primary);">AI Career Instructor</strong> — <em>Weekend Online Classes (Sat & Sun)</em>
-        </div>
-        <p>
-          Designs and delivers practical AI career training for college and university students. The training focuses on helping learners use AI to build practical skills, complete real-world projects, and prepare for future employment and freelance opportunities.
-        </p>
-        <p><strong>Key teaching areas include:</strong></p>
-        <ul class="styled-list">
-          <li>AI prompt engineering and deep research using AI</li>
-          <li>Research paper, PDF, and data analysis</li>
-          <li>NotebookLM-assisted study systems & academic document improvement</li>
-          <li>Computational thinking and problem-solving</li>
-          <li>Website creation and web application development with AI</li>
-          <li>AI graphic design, content creation, and data presentation</li>
-          <li>AI workflow automation and business web applications</li>
-          <li>Resume building, interview preparation, and real-world portfolio project development</li>
-        </ul>
-      </section>
-
-      <!-- Teaching Approach -->
-      <section>
-        <h2 class="section-title">Teaching Approach</h2>
-        <ul class="styled-list">
-          <li>Explains complex technical concepts in a clear and practical way.</li>
-          <li>Uses hands-on exercises instead of tool introductions alone.</li>
-          <li>Connects AI skills with realistic workplace and business use cases.</li>
-          <li>Guides students through complete projects from idea to implementation.</li>
-          <li>Helps learners build visible evidence of their skills through portfolios.</li>
-          <li>Encourages responsible, accurate, and purposeful use of AI.</li>
-          <li>Provides close guidance through small-group online classes.</li>
-        </ul>
-      </section>
-
-      <!-- Professional Value -->
-      <section>
-        <h2 class="section-title">Professional Value</h2>
-        <p>
-          I help learners and organizations use technology and artificial intelligence to solve practical problems, improve productivity, create digital solutions, and develop future-ready skills.
-        </p>
-        <p><strong>My work connects:</strong></p>
-        <ul class="styled-list">
-          <li>Technology & Systems Management</li>
-          <li>Practical AI Education & Mentorship</li>
-          <li>Career Development & Portfolio Building</li>
-          <li>Business Problem-Solving & Workflow Automation</li>
-          <li>AI-Assisted Digital Creation</li>
-        </ul>
-      </section>
-
-      <!-- Selected Work & Portfolio CTA -->
-      <section>
-        <h2 class="section-title">Selected Work & Portfolio</h2>
-        <div class="cta-box">
-          <p>Explore my websites, applications, AI projects, educational work, and business solutions.</p>
-          <a href="https://komoe.org/" class="btn-portfolio" target="_blank" rel="noopener noreferrer">View Full Portfolio</a>
+        <div class="experience-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">AI Career Instructor</span>
+              <span class="exp-company"> — AI Mindset Education & Mentorship (Weekend Online Classes)</span>
+            </div>
+            <span class="exp-date">2024 – Present</span>
+          </div>
+          <p class="project-desc" style="margin-top: 3px;">
+            Designs and delivers project-based AI career training for college and university students, focusing on practical AI application, workflow automation, and career preparation.
+          </p>
+          <ul class="styled-list">
+            <li>Design and deliver project-based AI career training for college and university students.</li>
+            <li>Teach AI research, prompt engineering, study systems, website creation, workflow automation, and career preparation.</li>
+            <li>Guide students through real-world portfolio projects.</li>
+            <li>Deliver small-group weekend online classes.</li>
+            <li>Explain complex technologies through clear, practical exercises.</li>
+          </ul>
         </div>
       </section>
 
-      <!-- Career Interests -->
-      <section>
-        <h2 class="section-title">Career Interests</h2>
-        <p>Open to suitable opportunities involving:</p>
-        <ul class="styled-list">
-          <li>AI education and training</li>
-          <li>Digital skills education</li>
-          <li>AI implementation</li>
-          <li>AI workflow and automation development</li>
-          <li>Business technology solutions</li>
-          <li>Web and application development</li>
-          <li>IT and systems management</li>
-          <li>Technology consulting</li>
-          <li>Student and professional career development</li>
-        </ul>
+      <!-- 7. SELECTED PROJECTS & PORTFOLIO HIGHLIGHTS -->
+      <section class="cv-section">
+        <h2 class="section-title">Selected Projects & Portfolio</h2>
+        <p class="project-desc" style="margin-bottom: 8px;">
+          Selected websites, applications, AI projects, educational work, and business solutions are available at <a href="https://komoe.org/" target="_blank" rel="noopener noreferrer">komoe.org</a>.
+        </p>
+
+        <div class="project-entry">
+          <div class="project-header">
+            <span class="project-title">AI Mindset Education & LMS Portal</span>
+            <a href="https://ai-mindset.komoe.org/" target="_blank" rel="noopener noreferrer" class="project-meta">ai-mindset.komoe.org</a>
+          </div>
+          <div class="project-desc">EdTech & AI Career Training platform empowering students with practical AI skills, study systems, and workflow automation.</div>
+          <div class="project-meta"><strong>Contribution:</strong> Founder & AI Career Instructor — Designed LMS portal, curriculum, and prompt engineering frameworks.</div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-header">
+            <span class="project-title">Yangon Bus System (YBS) Intelligent Framework</span>
+            <span class="project-meta">Smart City & Telematics</span>
+          </div>
+          <div class="project-desc">Citywide public transit telematics, passenger monitoring, and YPS payment card processing across 1,000+ public buses.</div>
+          <div class="project-meta"><strong>Contribution:</strong> IT Manager (ASTI) — Architected transit telematics and real-time payment processing infrastructure.</div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-header">
+            <span class="project-title">Cross-Border Manufacturing ISMS & Security</span>
+            <span class="project-meta">Cybersecurity & ISO Governance</span>
+          </div>
+          <div class="project-desc">Enterprise MRP and procurement CRM security framework operating under strict ISO 27001 policies for international electronics production.</div>
+          <div class="project-meta"><strong>Contribution:</strong> IT Specialist / Dept Head (IIDA Electronic) — Implemented ISMS governance and MS EDR endpoint defense.</div>
+        </div>
       </section>
 
-      <!-- Footer -->
+      <!-- 8. TECHNICAL AREAS & CERTIFICATIONS -->
+      <section class="cv-section">
+        <h2 class="section-title">Certifications & Technical Stack</h2>
+        <div class="cert-tech-grid">
+          <div class="info-card">
+            <div class="info-card-title">ISO Certifications (Verified)</div>
+            <div class="project-desc">• ISO 27001:2022 (Information Security Management)</div>
+            <div class="project-desc">• ISO 9001:2015 (Quality Management System)</div>
+            <div class="project-desc">• ISO 14000 (Environmental Management System)</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title">Technical Infrastructure</div>
+            <div class="project-desc">• Cloud & Hosting: AWS Cloud, Docker, Proxmox PVE, Cloudflare</div>
+            <div class="project-desc">• Security & AI: MS EDR, Nessus Vulnerability Scanning, Ollama AI</div>
+            <div class="project-desc">• Systems: Enterprise MRP, Procurement CRM, BMS/ELV Networks</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
       <footer class="cv-footer">
         <div>
-          Aung Zaw Moe (Ko Moe) — Technology, AI Education and Digital Solutions
+          <strong>Aung Zaw Moe (Ko Moe)</strong> — IT Manager | AI Career Instructor | Digital Solution Builder
         </div>
         <div>
-          Portfolio: <a href="https://komoe.org/" target="_blank" rel="noopener noreferrer">https://komoe.org/</a> | © <span id="year-span">2026</span>
+          Portfolio: <a href="https://komoe.org/" target="_blank" rel="noopener noreferrer">komoe.org</a> | Updated <span id="year-span">2026</span>
         </div>
       </footer>
+
     </main>
   </div>
 
