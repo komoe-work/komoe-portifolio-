@@ -33,7 +33,8 @@ import {
   Linkedin,
   Facebook,
   GraduationCap,
-  Sparkles
+  Sparkles,
+  FileText
 } from "lucide-react";
 
 const fadeIn = {
@@ -142,9 +143,10 @@ export default function App() {
         <div className="space-y-8">
           <section>
             <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-text-light mb-3 block">Executive Profile</span>
-            <p className="text-[12.5px] text-text-main leading-relaxed">
+            <p className="text-[12.5px] text-text-main leading-relaxed mb-3">
               Results-driven IT Manager & AI Career Instructor with 10+ years of expertise in enterprise infrastructure and practical AI education. Teaches weekend online classes helping students build job-ready skills, workflow automation, and real-world AI projects.
             </p>
+            <CvButtonGroup variant="compact" />
           </section>
 
           <section>
@@ -171,6 +173,23 @@ export default function App() {
 
       {/* MAIN CONTENT */}
       <main className="flex-1 h-full p-6 lg:p-10 overflow-y-auto flex flex-col gap-6">
+        {/* CV Hero Banner */}
+        <motion.div 
+          {...fadeIn}
+          className="bg-white p-6 rounded-xl border border-border-subtle shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+        >
+          <div className="flex flex-col gap-1 max-w-xl">
+            <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-accent">Professional Summary CV</span>
+            <h2 className="text-lg font-bold text-primary tracking-tight">Aung Zaw Moe (Ko Moe) — CV & Career Overview</h2>
+            <p className="text-[12px] text-text-main opacity-80 leading-relaxed">
+              Explore or download the standalone professional CV covering IT Management, Systems Infrastructure, and AI Career Skills Training.
+            </p>
+          </div>
+          <div className="w-full md:w-auto shrink-0">
+            <CvButtonGroup />
+          </div>
+        </motion.div>
+
         {/* Highlight Banner Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* AI Career Instructor Card */}
@@ -256,6 +275,23 @@ export default function App() {
               desc="Led complete IT service delivery for a premium 300+ employee real estate complex. Deployed full-scale BMS and ELV systems."
             />
           </div>
+
+          {/* End of About / Experience Section CV Call to Action */}
+          <motion.div 
+            {...fadeIn}
+            className="mt-2 bg-slate-900 text-white p-6 rounded-xl border border-slate-800 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+          >
+            <div className="flex flex-col gap-1 max-w-lg">
+              <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-accent">Summary CV Document</span>
+              <h3 className="text-base font-bold text-white tracking-tight">Need a full copy of Aung Zaw Moe's CV?</h3>
+              <p className="text-[12px] text-slate-300 font-normal leading-relaxed">
+                Download or view the clean, printable HTML summary CV for recruitment, teaching evaluation, or project collaboration.
+              </p>
+            </div>
+            <div className="w-full md:w-auto shrink-0">
+              <CvButtonGroup />
+            </div>
+          </motion.div>
         </section>
       </main>
 
@@ -267,6 +303,102 @@ export default function App() {
           <MarketingMindsetModal onClose={() => setShowMarketingMindset(false)} />
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+function CvButtonGroup({ variant = "default" }: { variant?: "default" | "compact" }) {
+  const [downloading, setDownloading] = React.useState(false);
+
+  const handleDownloadCv = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    setDownloading(true);
+    const cvUrl = "/ko-moe-summary-cv.html";
+    const fileName = "Aung-Zaw-Moe-Ko-Moe-Summary-CV.html";
+
+    try {
+      const response = await fetch(cvUrl);
+      if (!response.ok) throw new Error("Failed to fetch CV file");
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (err) {
+      console.error("Direct download fallback active:", err);
+      const a = document.createElement("a");
+      a.href = cvUrl;
+      a.download = fileName;
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } finally {
+      setTimeout(() => setDownloading(false), 600);
+    }
+  };
+
+  if (variant === "compact") {
+    return (
+      <div className="flex flex-col gap-2 w-full my-2">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleDownloadCv}
+            disabled={downloading}
+            className="flex-1 flex items-center justify-center gap-1.5 bg-accent text-white py-2.5 px-3 rounded-lg text-[10.5px] font-bold uppercase tracking-wider shadow hover:bg-accent/90 transition-all active:scale-[0.98] cursor-pointer disabled:opacity-70"
+            aria-label="Download Aung Zaw Moe (Ko Moe) Summary CV as HTML"
+          >
+            <Download className="w-3.5 h-3.5" aria-hidden="true" />
+            {downloading ? "Downloading..." : "Download CV"}
+          </button>
+          <a
+            href="/ko-moe-summary-cv.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-1.5 bg-primary text-white py-2.5 px-3 rounded-lg text-[10.5px] font-bold uppercase tracking-wider shadow hover:bg-slate-800 transition-all active:scale-[0.98]"
+            aria-label="View Aung Zaw Moe (Ko Moe) Summary CV in browser"
+          >
+            <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+            View CV
+          </a>
+        </div>
+        <span className="text-[9.5px] text-text-light text-center font-medium block">
+          HTML Format • Professional Summary • Updated 2026
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-2 my-1">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+        <button
+          onClick={handleDownloadCv}
+          disabled={downloading}
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-accent text-white py-3 px-4 rounded-xl text-[11px] font-bold uppercase tracking-widest shadow-md hover:bg-accent/90 hover:-translate-y-0.5 transition-all active:scale-[0.98] cursor-pointer disabled:opacity-70"
+          aria-label="Download Aung Zaw Moe (Ko Moe) Summary CV"
+        >
+          <Download className="w-4 h-4" aria-hidden="true" />
+          {downloading ? "Downloading CV..." : "Download My CV"}
+        </button>
+        <a
+          href="/ko-moe-summary-cv.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-white py-3 px-4 rounded-xl text-[11px] font-bold uppercase tracking-widest shadow-md hover:bg-slate-800 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+          aria-label="View Aung Zaw Moe (Ko Moe) Summary CV"
+        >
+          <FileText className="w-4 h-4" aria-hidden="true" />
+          View My CV
+        </a>
+      </div>
+      <span className="text-[10px] text-text-light text-center font-medium block mt-0.5">
+        HTML Format • Professional Summary • Updated 2026
+      </span>
     </div>
   );
 }
